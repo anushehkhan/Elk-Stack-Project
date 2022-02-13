@@ -86,7 +86,6 @@ The playbook implements the following tasks:
 - Launch and expose the elk container by these published-ports: 
 - <img width="371" alt="image" src="https://user-images.githubusercontent.com/99552635/153770702-b21dc0db-0885-4b93-bdbd-a635ab4133cc.png">
 
-- 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 **Note**: The following image link needs to be updated. Replace `docker_ps_output.png` with the name of your screenshot image file.  
