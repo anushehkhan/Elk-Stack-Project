@@ -112,16 +112,18 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
-- Copy the install-elk.yml file to docker container (in the /etc/ansible directory). Run the playbook: ansible-playbook install-elk.yml
+- Copy the install-elk.yml file to docker container (in the /etc/ansible directory). Run the playbook: ansible-playbook install-elk.yml. This is the playbook used to install and configure elk container.
 
 - Update the filebeat-playbook.yml to include installer
 curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deand 
 Update the metricbeat-playbook.yml files to include installer
 curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
+**The metricbeat-playbook.yml and filebeat-playbook.yml are the two playbooks for metricbeat and filebeat, and we copy those in the docker container.
 
 - Update the filebeat-config.yml and metricbeat-config.yml files to include private IP address of the ELK server in elasticsearch and kibana output as shown below.
 <img width="596" alt="Edit-filebeat-config yml" src="https://user-images.githubusercontent.com/99552635/153773937-920122d7-9726-4b83-9cb0-6bde077047d2.png">
 <img width="707" alt="image" src="https://user-images.githubusercontent.com/99552635/153774022-a11eba82-6710-4c56-9b42-44c9d5c4b659.png">
+**The ansible Hosts file in the /etc/ansible/hosts directory is confirguered to run the playbook on specific machines. The private IP addresses are written into these files to specify which machines to install the ELK server on. [webservers] and [elk] are groups. When you run playbooks with Ansible, you specify which group to run them on. This allows you to run certain playbooks on some machines, but not on others. <img width="400" alt="image" src="https://user-images.githubusercontent.com/99552635/153775955-d589020d-a474-404e-8ea3-f9eca395a1dc.png">
 
 - Run the playbooks using these commands: (ansible-playbook filebeat-playbook.yml) (ansible-playbook metricbeat-playbook.yml), and navigate to Kibana to check that the installation worked as expected.
 
@@ -130,4 +132,21 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 
 NOTE: Bonus commands are in images folder. The names of the images describes what each command is performing.
 
-To get Log data from Kibana: Enter url http://[public-ip-elk-server]:5601/app/kibana#home > Click Logs > Click Add log data > System logs > Click check data > Systems Log Dashboard
+## Additional Notes
+
+**To get Log Data:** To get Log data from Kibana: Enter url http://[public-ip-elk-server]:5601/app/kibana#home > Click Logs > Click Add log data > System logs > Click check data > Systems Log Dashboard
+**To get Metrics Data:** To get metrics data from Kibana: Enter url http://[public-ip-elk-server]:5601/app/kibana#home > Add Metric Data > Docker Metrics > Check Data > Docker Metrics Dashboard
+**To download and create Filebeat playbook:** Enter command in your docker container: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb > filebeat-playbook.yml
+**To download and create Metricbeat playbook:** Enter command in your docker container: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb > metricbeat-playbook.yml
+**To update ansible configuration file:** Enter command: nano /etc/ansible/hosts and add the IP addresses for the webservers and elk server as shown in picture above.
+**Other useful commands:**
+**sudo apt-get update**: updates all packages
+**sudo apt install docker.io**: installs docker application
+**sudo service docker start**: starts the docker application
+**systemctl status docker**: shows the status of the docker application (if it is running)
+**sudo docker pull cyberxsecurity/ansible**: Downloads the docker file
+**sudo docker run -ti cyberxsecurity/ansible bash**: RUns and creates a docker image
+**sudo docker start [insert docker image name]** : starts the image 
+**sudo docker ps -a** : lists active or inactive containers
+**sudo docker attach [insert docker image name]** : ssh into the ansible container
+**ssh-keygen**: creates an ssh key
