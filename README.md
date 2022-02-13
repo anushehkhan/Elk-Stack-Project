@@ -111,8 +111,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the install-elk.yml file to docker container (in the /etc/ansible directory).
-- 
+
+- Copy the install-elk.yml file to docker container (in the /etc/ansible directory). Run the playbook: ansible-playbook install-elk.yml
+
 - Update the filebeat-playbook.yml to include installer
 curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deand 
 Update the metricbeat-playbook.yml files to include installer
@@ -122,9 +123,11 @@ curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.
 <img width="596" alt="Edit-filebeat-config yml" src="https://user-images.githubusercontent.com/99552635/153773937-920122d7-9726-4b83-9cb0-6bde077047d2.png">
 <img width="707" alt="image" src="https://user-images.githubusercontent.com/99552635/153774022-a11eba82-6710-4c56-9b42-44c9d5c4b659.png">
 
-- Run the playbooks, and navigate to Kibana to check that the installation worked as expected.
+- Run the playbooks using these commands: (ansible-playbook filebeat-playbook.yml) (ansible-playbook metricbeat-playbook.yml), and navigate to Kibana to check that the installation worked as expected.
 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 
 NOTE: Bonus commands are in images folder. The names of the images describes what each command is performing.
+
+To get Log data from Kibana: Enter url http://[public-ip-elk-server]:5601/app/kibana#home > Click Logs > Click Add log data > System logs > Click check data > Systems Log Dashboard
