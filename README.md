@@ -6,14 +6,14 @@ The files in this repository were used to configure the network depicted below.
 
 **Note**: The following image link needs to be updated. Replace `diagram_filename.png` with the name of your diagram image file.  
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+/Elk-Stack-Project/diagrams
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the "YML and/or config" file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the "YML and config" file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._
  ~/Downloads/Elk-Stack-Project/ansible/install-elk.yml
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -35,18 +35,19 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name      | Function  | IP Address | Operating System |
+|---------- |---------- |------------|------------------|
+| Jump Box  | Gateway   | 10.0.0.4   | Linux            |
+| Web 1     | Webserver | 10.0.0.7   | Linux            |
+| Web 2     | Webserver | 10.0.0.6   | Linux            |
+| Web 3     | Webserver | 10.0.0.9   | Linux            |
+| Elk Server| Webserver | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Elk Server machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 
 Machines within the network can only be accessed by _____.
