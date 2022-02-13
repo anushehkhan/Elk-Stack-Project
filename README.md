@@ -41,11 +41,11 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name         | Function                                           | IP Address               | Operating System |
-|----------    |----------                                          |-----------              -|------------------|
-| Jump Box     | Gateway                                            | 10.0.0.4; 20.121.208.201 | Linux            |
-| Web 1        | Webserver                                          | 10.0.0.7                 | Linux            |
-| Web 2        | Webserver                                          | 10.0.0.6                 | Linux            |
+| Name| Function| IP Address| Operating System|
+|----------|---------- |------------|------------------|
+| Jump Box| Gateway | 10.0.0.4; 20.121.208.201 | Linux |
+| Web 1 | Webserver| 10.0.0.7| Linux |
+| Web 2| Webserver | 10.0.0.6 | Linux |
 | Web 3        | Webserver                                          | 10.0.0.9                 | Linux            |
 | Elk Server   | Elk Server (centralized logging and monitoring)    | 10.1.0.4;  104.40.73.49  | Linux            |
 | Load Balancer| Traffic distribution and balance                   | 52.186.121.85            | Linux            |
