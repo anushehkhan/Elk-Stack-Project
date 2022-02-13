@@ -82,6 +82,7 @@ The playbook implements the following tasks:
 - Increase system memory:
 - <img width="188" alt="image" src="https://user-images.githubusercontent.com/99552635/153770585-f8094c93-87d5-4a2e-8f24-dbcf8bd88725.png">
 - Install different services: docker.io, python3-pip, docker 
+
 - Launch and expose the elk container by these published-ports: 
 - <img width="371" alt="image" src="https://user-images.githubusercontent.com/99552635/153770702-b21dc0db-0885-4b93-bdbd-a635ab4133cc.png">
 
