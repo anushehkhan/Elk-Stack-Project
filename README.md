@@ -32,9 +32,9 @@ It is a more hardened and secure server that is launched and then connected to o
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 - What does Filebeat watch for?
-- Filebeat is used for forwarding and centralizing log data. It watches the log files or locations that you specify, collects log events, and forwards the either to Elasticsearch or Logstash for indexing.
+Filebeat is used for forwarding and centralizing log data. It watches the log files or locations that you specify, collects log events, and forwards the either to Elasticsearch or Logstash for indexing.
 - What does Metricbeat record?
-- Metricbeat records the metrics and statistics that it collects and ships them to the specified output, such as Elasticsearch or Logstash. It monitors your servers by collecting metrics from the syste, and services running on the server, such as Apache.
+Metricbeat records the metrics and statistics that it collects and ships them to the specified output, such as Elasticsearch or Logstash. It monitors your servers by collecting metrics from the syste, and services running on the server, such as Apache.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
