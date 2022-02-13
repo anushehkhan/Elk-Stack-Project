@@ -135,18 +135,34 @@ NOTE: Bonus commands are in images folder. The names of the images describes wha
 ## Additional Notes
 
 **To get Log Data:** To get Log data from Kibana: Enter url http://[public-ip-elk-server]:5601/app/kibana#home > Click Logs > Click Add log data > System logs > Click check data > Systems Log Dashboard
+
 **To get Metrics Data:** To get metrics data from Kibana: Enter url http://[public-ip-elk-server]:5601/app/kibana#home > Add Metric Data > Docker Metrics > Check Data > Docker Metrics Dashboard
+
 **To download and create Filebeat playbook:** Enter command in your docker container: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb > filebeat-playbook.yml
+
 **To download and create Metricbeat playbook:** Enter command in your docker container: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb > metricbeat-playbook.yml
+
 **To update ansible configuration file:** Enter command: nano /etc/ansible/hosts and add the IP addresses for the webservers and elk server as shown in picture above.
+
+
 **Other useful commands:**
+
 **sudo apt-get update**: updates all packages
+
 **sudo apt install docker.io**: installs docker application
+
 **sudo service docker start**: starts the docker application
+
 **systemctl status docker**: shows the status of the docker application (if it is running)
+
 **sudo docker pull cyberxsecurity/ansible**: Downloads the docker file
+
 **sudo docker run -ti cyberxsecurity/ansible bash**: RUns and creates a docker image
+
 **sudo docker start [insert docker image name]** : starts the image 
+
 **sudo docker ps -a** : lists active or inactive containers
+
 **sudo docker attach [insert docker image name]** : ssh into the ansible container
+
 **ssh-keygen**: creates an ssh key
