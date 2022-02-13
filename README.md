@@ -87,33 +87,44 @@ The playbook implements the following tasks:
 <img width="371" alt="image" src="https://user-images.githubusercontent.com/99552635/153770702-b21dc0db-0885-4b93-bdbd-a635ab4133cc.png">
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+<img width="785" alt="image" src="https://user-images.githubusercontent.com/99552635/153771533-2efb3090-4353-4c25-9968-7304e4d6a05e.png">
 
 **Note**: The following image link needs to be updated. Replace `docker_ps_output.png` with the name of your screenshot image file.  
+(/Images/dockerps.png)
 
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+NOTE: Status of Web servers 1-3 ran and screenshots uploaded in the images directory.
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+-Web 1: 10.0.0.7
+-Web 2: 10.0.0.6
+-Web 3: 10.0.0.9
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- FileBeat and MetricBeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat: log events
+- Metricbeat: system statistics and metrics
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the install-elk.yml file to docker container (in the /etc/ansible directory).
+- 
+- Update the filebeat-playbook.yml to include installer
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deand 
+Update the metricbeat-playbook.yml files to include installer
+curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Update the filebeat-config.yml and metricbeat-config.yml files to include private IP address of the ELK server in elasticsearch and kibana output as shown below.
+<img width="596" alt="Edit-filebeat-config yml" src="https://user-images.githubusercontent.com/99552635/153773937-920122d7-9726-4b83-9cb0-6bde077047d2.png">
+<img width="707" alt="image" src="https://user-images.githubusercontent.com/99552635/153774022-a11eba82-6710-4c56-9b42-44c9d5c4b659.png">
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- Run the playbooks, and navigate to Kibana to check that the installation worked as expected.
+
+
+_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
+NOTE: Bonus commands are in images folder. The names of the images describes what each command is performing.
