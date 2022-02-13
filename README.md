@@ -80,11 +80,11 @@ The playbook implements the following tasks:
 - Specify a new machine (Elk Server) and new remote user (azadmin) 
 <img width="248" alt="image" src="https://user-images.githubusercontent.com/99552635/153770534-3872f337-b8d5-4f0a-ac66-1aaf60f40f25.png">
 - Increase system memory:
-- <img width="188" alt="image" src="https://user-images.githubusercontent.com/99552635/153770585-f8094c93-87d5-4a2e-8f24-dbcf8bd88725.png">
+<img width="188" alt="image" src="https://user-images.githubusercontent.com/99552635/153770585-f8094c93-87d5-4a2e-8f24-dbcf8bd88725.png">
 - Install different services: docker.io, python3-pip, docker 
 
 - Launch and expose the elk container by these published-ports: 
-- <img width="371" alt="image" src="https://user-images.githubusercontent.com/99552635/153770702-b21dc0db-0885-4b93-bdbd-a635ab4133cc.png">
+<img width="371" alt="image" src="https://user-images.githubusercontent.com/99552635/153770702-b21dc0db-0885-4b93-bdbd-a635ab4133cc.png">
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
